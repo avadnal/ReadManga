@@ -9,19 +9,19 @@
         android:showAsAction="never" />
     
     <item android:id="@+id/bookshelf"
-          android:title="@string/bookshelf_txt"
-          android:showAsAction="ifRoom|withText" />
+          android:icon="@drawable/storage"
+          android:showAsAction="always" />
 
     <item android:id="@+id/search"
-          android:title="@string/search_txt"
-          android:showAsAction="ifRoom|withText" />    
+          android:icon="@drawable/search"
+          android:showAsAction="always" />    
 
     <item android:id="@+id/downloading"
-          android:title="@string/downloading_txt"
-          android:showAsAction="ifRoom|withText" />
+          android:icon="@drawable/download"
+          android:showAsAction="always" />
     
     <item android:id="@+id/share"
-          android:title="@string/share_txt"
-          android:showAsAction="ifRoom|withText" />  
+          android:icon="@drawable/social"
+          android:showAsAction="always" />  
         
 </menu>
