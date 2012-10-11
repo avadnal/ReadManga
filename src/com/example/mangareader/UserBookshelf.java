@@ -1,8 +1,5 @@
 package com.example.mangareader;
 
-import java.util.ArrayList;
-
-import readManga.daoDB.Book;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -12,15 +9,13 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 //import roboguice.activity.RoboActivity;
 //import roboguice.inject.ContentView;
 import android.widget.TextView;
 
-
+// TEST COMMENT
 //@ContentView(R.layout.activity_user_bookshelf)
 public class UserBookshelf extends Activity{//RoboActivity {
 	
