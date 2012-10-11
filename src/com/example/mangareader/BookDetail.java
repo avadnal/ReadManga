@@ -1,23 +1,18 @@
 package com.example.mangareader;
 
-import java.util.ArrayList;
 
-import readManga.daoDB.Book;
+
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+
 import android.widget.TextView;
 
 public class BookDetail extends Activity {
 	
-	private static ArrayList<Book> searchArrayList;
-	private LayoutInflater mInflater;
+	//private static ArrayList<Book> searchArrayList;
+	//private LayoutInflater mInflater;
 	private int mPosition;
 	private TextView mTitle;
 	private TextView mAuthor;
@@ -36,9 +31,7 @@ public class BookDetail extends Activity {
         mAuthor = (TextView)findViewById(R.id.author);
         
         mTitle.setText(mDataSource.getTitleAtIndex(mPosition));
-        mAuthor.setText(mDataSource.getAuthorAtIndex(mPosition));
-        
-//        mTitle.setText(getResources().getString(mDataSource.getList().indexOf(object)))
+        mAuthor.setText(mDataSource.getAuthorAtIndex(mPosition));       
 
 	}
 	

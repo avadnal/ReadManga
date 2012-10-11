@@ -1,18 +1,31 @@
 package com.example.mangareader;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 import android.app.ListActivity;
+=======
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+>>>>>>> branch 'master' of https://github.com/avadnal/ReadManga.git
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+<<<<<<< HEAD
 
+=======
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+>>>>>>> branch 'master' of https://github.com/avadnal/ReadManga.git
 import android.widget.ListView;
 //import roboguice.activity.RoboActivity;
 //import roboguice.inject.ContentView;
 import android.widget.TextView;
 
-
+// TEST COMMENT
 //@ContentView(R.layout.activity_user_bookshelf)
 public class UserBookshelf extends Activity{//RoboActivity {
 	
