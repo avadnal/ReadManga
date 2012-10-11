@@ -12,6 +12,6 @@ public class DAOManager
 	{
 		OpenHelper helper = new DaoMaster.DevOpenHelper(context, "", null);
 		//QLiteDatabase db 
-		DaoMaster daoMaster = new DaoMaster(db);
+		//DaoMaster daoMaster = new DaoMaster(db);
 	}
 }
