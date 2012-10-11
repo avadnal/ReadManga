@@ -3,7 +3,8 @@ package com.example.mangareader;
 import java.util.ArrayList;
 
 import readManga.daoDB.Book;
-
+//
+//
 public class Datasource {
 	
 	ArrayList<Book> list = new ArrayList<Book>();
