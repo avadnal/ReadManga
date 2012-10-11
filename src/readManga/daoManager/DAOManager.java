@@ -11,7 +11,7 @@ public class DAOManager
 	public void insertBook(Context context, Book newBook)
 	{
 		OpenHelper helper = new DaoMaster.DevOpenHelper(context, "", null);
-		SQLiteDatabase db 
+		//QLiteDatabase db 
 		DaoMaster daoMaster = new DaoMaster(db);
 	}
 }
