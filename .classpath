@@ -12,5 +12,6 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/DaoExample/docs/greenDAO-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/phuongle/Documents/workspace/Andorid lib/HTML parser/jsoup-1.7.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
