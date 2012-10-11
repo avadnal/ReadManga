@@ -4,37 +4,95 @@ import java.util.ArrayList;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 
 import android.widget.ListView;
 //import roboguice.activity.RoboActivity;
 //import roboguice.inject.ContentView;
+import android.widget.TextView;
 
 
 //@ContentView(R.layout.activity_user_bookshelf)
-public class UserBookshelf extends ListActivity{//RoboActivity {
+public class UserBookshelf extends Activity{//RoboActivity {
 	
+	public class BookshelfAdapter extends BaseAdapter {
+		
+		private Context mContext;
+		
+		// mInflator used to instantiate layout XML file into its corresponding View objects.
+		private LayoutInflater mInflator;
+		private Datasource mDataSource;
+		
+		public BookshelfAdapter(Context c){
+			mContext = c;
+			mInflator = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			mDataSource = new Datasource();
+		}
+		
+		public int getCount(){
+			return mDataSource.getDatasourceSize();
+		}
+		
+
+		public Object getItem(int position) {
+			return mDataSource.getList().get(position);
+			
+		}
+
+		public long getItemId(int position) {
+			
+			return position;
+		}
+		
+		// Get a view that displays the data at the specified position in the data set.
+		
+		public View getView(int position, View convertView, ViewGroup parent) {
+			//ImageView thumbnail;
+			TextView title;
+			TextView author;
+			
+			if (convertView == null){
+				convertView = mInflator.inflate(R.layout.list_book, parent, false);
+						//(R.layout.list_item_layout, parent, false);
+			}
+			
+//			thumbnail = (ImageView)convertView.findViewById(R.list.thumb);
+//			thumb\nail.setImageResource(mDataSource.getmPhotoPool().get(position));
+			
+			title = (TextView)convertView.findViewById(R.id.name);
+			title.setText(mDataSource.getTitleAtIndex(position));										
+						
+			author = (TextView)convertView.findViewById(R.id.author);
+			author.setText(mDataSource.getAuthorAtIndex(position));
+			
+			return convertView;
+		}
+	}
+		
+		
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_bookshelf);
-        //static String[] = new String{"aa", "bb", "cc"};
-        ArrayList<Book> dataList = this.populateData();	
+
         final ListView listView = (ListView)findViewById(R.id.ListView01);
-        listView.setAdapter(new CustomBookshelfAdapter(this, dataList));
+        listView.setAdapter(new BookshelfAdapter(this));
+        //listView.setAdapter(new CustomBookshelfAdapter(this, dataList));
 	
-//		listView.setOnItemClickListener(new OnItemClickListener() {
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View view,
-//					int position, long id) {
-//				//Object o = listView.getItemAtPosition(position);
-//		          //Book fullObject = (Book)o;
-//		          //Toast.makeText(getApplicationContext().this, "You have chosen: " + " " + fullObject.getName(), Toast.LENGTH_LONG).show();
-//			    // When clicked, show a toast with the TextView text
-//			    //Toast.makeText(getApplicationContext(),
-//				//((TextView) view).getText(), Toast.LENGTH_SHORT).show();
-//			}
-//		});
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				//Object o = listView.getItemAtPosition(position);
+		        //Book bookObject = (Book)o;		        
+		        
+		        Intent i = new Intent(UserBookshelf.this, BookDetail.class);
+        		//i.putExtra("position", position);
+        		i.putExtra("position", position);
+        		startActivity(i);
+			}
+		});
         
     }
 
@@ -43,18 +101,5 @@ public class UserBookshelf extends ListActivity{//RoboActivity {
         getMenuInflater().inflate(R.menu.activity_user_bookshelf, menu);
         	
         return true;
-    }
-    
-	public ArrayList<Book> populateData(){
-		ArrayList<Book> list = new ArrayList<Book>();
-		Book book1 = new Book(0,"some book title","2012","andrew");
-		Book book2 = new Book(1,"some book title2","2012","jeremy");
-		Book book3 = new Book(2,"some book title3","2012","qiju");
-		list.add(book1);
-		list.add(book2);
-		list.add(book3);
-	return list;
-	
-}
-     
+    }      
 }

@@ -49,13 +49,13 @@ public class CustomBookshelfAdapter extends BaseAdapter {
 			  holder = (ViewHolder) convertView.getTag();
 		  }
 		  
-		  holder.txtName.setText(searchArrayList.get(position).getName());
+		  holder.txtName.setText(searchArrayList.get(position).getTitle());
 		  holder.txtAuthor.setText(searchArrayList.get(position).getAuthor());
-		  holder.txtYear.setText(searchArrayList.get(position).getYear());
+		  holder.txtYear.setText(searchArrayList.get(position).getYearReleased());
 
 		  return convertView;
 		 }
-
+	
 		 static class ViewHolder {
 			 TextView txtName;
 			 TextView txtAuthor;
