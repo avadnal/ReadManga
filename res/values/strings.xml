@@ -6,4 +6,7 @@
     <string name="search_txt">Search</string>
 	<string name="downloading_txt">Downloading</string>
  	<string name="share_txt">Share</string>
+ 	<string name="thumbnail_description">Thumbnail Description</string>
+ 	<string name="isBookshelf_description">Is it in bookshelf?</string>
+ 	<string name="isRead_description">Has it been read?</string>
 </resources>

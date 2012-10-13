@@ -5,10 +5,12 @@
 	 android:layout_height="fill_parent">
  <TextView
       
-	  android:layout_height="wrap_content"
+	  android:layout_height="wrap_content"	  	  
+	  android:layout_width="fill_parent">
+     
+ </TextView>
+	  <!-- android:gravity="center_vertical|center_horizontal" -->
 	  
-	  android:gravity="center_vertical|center_horizontal"
-	  android:layout_width="fill_parent" />
   <ListView 
 	   android:id="@+id/ListView01" 
 	   android:layout_height="wrap_content"

@@ -1,8 +1,5 @@
 package com.example.mangareader;
 
-
-
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +8,8 @@ import android.widget.TextView;
 
 public class BookDetail extends Activity {
 	
-	//private static ArrayList<Book> searchArrayList;
-	//private LayoutInflater mInflater;
 	private int mPosition;
-	private TextView mTitle;
-	private TextView mAuthor;
+	private TextView mTitle, mAuthor, mYear;	
 	private Datasource mDataSource;
 	
 	
@@ -29,10 +23,11 @@ public class BookDetail extends Activity {
         mDataSource = new Datasource();                  
         mTitle = (TextView)findViewById(R.id.name);
         mAuthor = (TextView)findViewById(R.id.author);
+        mYear = (TextView)findViewById(R.id.year);
         
         mTitle.setText(mDataSource.getTitleAtIndex(mPosition));
         mAuthor.setText(mDataSource.getAuthorAtIndex(mPosition));       
-
+        mYear.setText(mDataSource.getYearAtIndex(mPosition));
 	}
 	
 }

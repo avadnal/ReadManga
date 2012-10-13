@@ -1,8 +1,5 @@
 package com.example.mangareader;
 
-import java.util.ArrayList;
-
-import android.app.ListActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,20 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
-//import roboguice.activity.RoboActivity;
-//import roboguice.inject.ContentView;
 import android.widget.TextView;
 
-// TEST COMMENT
-//@ContentView(R.layout.activity_user_bookshelf)
-public class UserBookshelf extends Activity{//RoboActivity {
+public class UserBookshelf extends Activity {
 	
 	public class BookshelfAdapter extends BaseAdapter {
 		
-		private Context mContext;
-		
-		// mInflator used to instantiate layout XML file into its corresponding View objects.
+		private Context mContext;				
 		private LayoutInflater mInflator;
 		private Datasource mDataSource;
 		
@@ -54,17 +46,22 @@ public class UserBookshelf extends Activity{//RoboActivity {
 		// Get a view that displays the data at the specified position in the data set.
 		
 		public View getView(int position, View convertView, ViewGroup parent) {
-			//ImageView thumbnail;
-			TextView title;
-			TextView author;
+
+			TextView title, author, year;			
+			ImageView thumbnail, isBookshelf, isRead;
 			
 			if (convertView == null){
 				convertView = mInflator.inflate(R.layout.list_book, parent, false);
-						//(R.layout.list_item_layout, parent, false);
 			}
 			
-//			thumbnail = (ImageView)convertView.findViewById(R.list.thumb);
-//			thumb\nail.setImageResource(mDataSource.getmPhotoPool().get(position));
+			thumbnail = (ImageView)convertView.findViewById(R.id.thumbnail);
+			thumbnail.setImageResource(R.drawable.apple_hd);
+			
+			isBookshelf = (ImageView)convertView.findViewById(R.id.isBookshelf);
+			isBookshelf.setImageResource(R.drawable.seal);
+			
+			isRead = (ImageView)convertView.findViewById(R.id.isRead);
+			isRead.setImageResource(R.drawable.notification);
 			
 			title = (TextView)convertView.findViewById(R.id.name);
 			title.setText(mDataSource.getTitleAtIndex(position));										
@@ -72,19 +69,20 @@ public class UserBookshelf extends Activity{//RoboActivity {
 			author = (TextView)convertView.findViewById(R.id.author);
 			author.setText(mDataSource.getAuthorAtIndex(position));
 			
+			year = (TextView)convertView.findViewById(R.id.year);
+			year.setText(mDataSource.getYearAtIndex(position));					
+			
 			return convertView;
 		}
 	}
-		
-		
+				
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_bookshelf);
 
         final ListView listView = (ListView)findViewById(R.id.ListView01);
-        listView.setAdapter(new BookshelfAdapter(this));
-        //listView.setAdapter(new CustomBookshelfAdapter(this, dataList));
+        listView.setAdapter(new BookshelfAdapter(this));        //
 	
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			
