@@ -1,9 +1,25 @@
 package com.example.mangareader;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
+
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -43,32 +59,54 @@ public class UserBookshelf extends Activity {
 			return position;
 		}
 		
+		public Drawable LoadImageFromUrl(String url) {
+		    try {
+		        InputStream is = (InputStream) new URL(url).getContent();
+		        Drawable d = Drawable.createFromStream(is, "src");
+		        return d;
+		    } catch (Exception e) {
+		        return null;
+		    }
+		}
+		
 		// Get a view that displays the data at the specified position in the data set.
 		
 		public View getView(int position, View convertView, ViewGroup parent) {
 
 			TextView title, author, year;			
-			ImageView thumbnail, isBookshelf, isRead;
-			
+			ImageView isBookshelf, isRead,tn;
+
+			String url = "http://l.mfcdn.net/store/manga/8/cover.jpg?1349859487";
+	
 			if (convertView == null){
 				convertView = mInflator.inflate(R.layout.list_book, parent, false);
 			}
 			
-			thumbnail = (ImageView)convertView.findViewById(R.id.thumbnail);
-			thumbnail.setImageResource(R.drawable.apple_hd);
-			
+			// Thumbnail logic
+			tn = (ImageView)convertView.findViewById(R.id.thumbnail);			
+			ImageLoader imageLoader = ImageLoader.getInstance();
+			// Initialize ImageLoader with configuration. Do it once.
+			imageLoader.init(ImageLoaderConfiguration.createDefault(mContext));
+			// Load and display image asynchronously
+			imageLoader.displayImage(url, tn);	
+				
+			// Check if bookshelf 
 			isBookshelf = (ImageView)convertView.findViewById(R.id.isBookshelf);
 			isBookshelf.setImageResource(R.drawable.seal);
 			
+			// Check if read
 			isRead = (ImageView)convertView.findViewById(R.id.isRead);
 			isRead.setImageResource(R.drawable.notification);
 			
+			// Get book title
 			title = (TextView)convertView.findViewById(R.id.name);
 			title.setText(mDataSource.getTitleAtIndex(position));										
 						
+			// Get author
 			author = (TextView)convertView.findViewById(R.id.author);
 			author.setText(mDataSource.getAuthorAtIndex(position));
 			
+			// Get year
 			year = (TextView)convertView.findViewById(R.id.year);
 			year.setText(mDataSource.getYearAtIndex(position));					
 			
