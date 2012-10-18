@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import readManga.daoDB.*;
+import readanga.daoDB.*;
+
 //
 //
 public class Datasource {
@@ -74,7 +75,8 @@ public class Datasource {
 				" story of Naruto Uzumaki, now a adolescent ninja who constantly searches for" +
 				" recognition and dreams to become the Hokage, the ninja in his village who is" +
 				" acknowledged as the leader and the strongest of all.");
-
+		book1.setNumberOfChapters(20);
+		
 		Book book2 = new Book();
 		book2.setTitle("How to use GitHub: For Dummies some really" +
 				"long name here blah blah");
@@ -92,6 +94,7 @@ public class Datasource {
 				" story of Naruto Uzumaki, now a adolescent ninja who constantly searches for" +
 				" recognition and dreams to become the Hokage, the ninja in his village who is" +
 				" acknowledged as the leader and the strongest of all.");
+		book2.setNumberOfChapters(15);
 		
 		Book book3 = new Book();
 		book3.setTitle("Homputer Programming");
@@ -109,7 +112,7 @@ public class Datasource {
 				" story of Naruto Uzumaki, now a adolescent ninja who constantly searches for" +
 				" recognition and dreams to become the Hokage, the ninja in his village who is" +
 				" acknowledged as the leader and the strongest of all.");
-		
+		book3.setNumberOfChapters(1000);
 		Book book4 = new Book();
 		book4.setTitle("APPLES AND ORANGES");
 		book4.setAuthor("LIL JOHN");
@@ -126,6 +129,7 @@ public class Datasource {
 				" story of Naruto Uzumaki, now a adolescent ninja who constantly searches for" +
 				" recognition and dreams to become the Hokage, the ninja in his village who is" +
 				" acknowledged as the leader and the strongest of all.");
+		book4.setNumberOfChapters(10);
 		
 		bookList.add(book1);
 		bookList.add(book2);

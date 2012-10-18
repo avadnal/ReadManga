@@ -1,10 +1,9 @@
 package com.example.mangareader;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-import readManga.daoDB.Book;
+import readanga.daoDB.Book;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +21,6 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.utils.StorageUtils;
 
 public class UserBookshelf extends ListActivity {
 	

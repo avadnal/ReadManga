@@ -15,17 +15,6 @@ public class BookDetail extends Activity {
 	private int mPosition;
 	private Datasource mDataSource;
 	
-	public void openPressed(View view) {
-	      
-	}
-	
-	public void sharePressed(View view) {
-	      
-	}
-	
-	public void bookmarkPressed(View view) {
-	      
-	}
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,15 +26,16 @@ public class BookDetail extends Activity {
         mPosition = i.getIntExtra("position", 0);
         mDataSource = new Datasource();  
         
-//        Button openBtn = (Button)findViewById(R.id.openBtn);
-//        Button shareBtn = (Button)findViewById(R.id.shareBtn);
-//        Button bookmarkBtn = (Button)findViewById(R.id.bookmarkBtn);
+        
+        Button chapterBtn = (Button)findViewById(R.id.chapterBtn);
 
-//        button.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                // Do something in response to button click
-//            }
-//        });
+        chapterBtn.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View v) {
+        		Intent newIntent = new Intent(BookDetail.this, ChapterListView.class);
+        		newIntent.putExtra("position", mPosition);
+        		startActivity(newIntent);
+
+	 	}});
         
         
         holder.mThumbnailLarge = (ImageView)findViewById(R.id.thumbnailLarge);
@@ -67,7 +57,7 @@ public class BookDetail extends Activity {
         holder.mDescription.setText(mDataSource.getDescriptionAtIndex(mPosition));
         
 	}
-	
+
 	public static class ViewHolder {
 		View mThumbnailParentView;
 		TextView mTitle, mAuthor, mDescription;
