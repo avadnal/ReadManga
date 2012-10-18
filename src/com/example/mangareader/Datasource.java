@@ -37,6 +37,10 @@ public class Datasource {
 		
 	}
 	
+	public String getDescriptionAtIndex(int index){
+		return bookList.get(index).getDescription();
+	}
+	
 	public String getUrlAtIndex(int index){
 		return bookList.get(index).getUrl();
 		
@@ -60,6 +64,16 @@ public class Datasource {
 		book1.setYearReleased("1997");
 		book1.setGenre(genre1);
 		book1.setUrl("http://l.mfcdn.net/store/manga/8/cover.jpg?1349859487");
+		book1.setDescription("Twelve years before the start of the series," +
+				" a powerful creature known as the Nine-tailed Demon Fox attacked" +
+				" the ninja village Konohagakure, decimating many people. In response," +
+				" the leader of Konohagakure's ninja military – the Fourth Hokage – " +
+				"sacrificed his life to seal the demon inside his newly born child Naruto Uzumaki." +
+				" Konohagakure, however, regarded Naruto as if he were the demon fox itself" +
+				" and mistreated him throughout most of his childhood.The plot tells the" +
+				" story of Naruto Uzumaki, now a adolescent ninja who constantly searches for" +
+				" recognition and dreams to become the Hokage, the ninja in his village who is" +
+				" acknowledged as the leader and the strongest of all.");
 
 		Book book2 = new Book();
 		book2.setTitle("How to use GitHub: For Dummies some really" +
@@ -68,13 +82,33 @@ public class Datasource {
 		book2.setYearReleased("2002");
 		book2.setGenre(genre2);
 		book2.setUrl("http://l.mfcdn.net/store/manga/8/cover.jpg");
-			
+		book2.setDescription("Twelve years before the start of the series," +
+				" a powerful creature known as the Nine-tailed Demon Fox attacked" +
+				" the ninja village Konohagakure, decimating many people. In response," +
+				" the leader of Konohagakure's ninja military – the Fourth Hokage – " +
+				"sacrificed his life to seal the demon inside his newly born child Naruto Uzumaki." +
+				" Konohagakure, however, regarded Naruto as if he were the demon fox itself" +
+				" and mistreated him throughout most of his childhood.The plot tells the" +
+				" story of Naruto Uzumaki, now a adolescent ninja who constantly searches for" +
+				" recognition and dreams to become the Hokage, the ninja in his village who is" +
+				" acknowledged as the leader and the strongest of all.");
+		
 		Book book3 = new Book();
 		book3.setTitle("Homputer Programming");
 		book3.setAuthor("Donald Knuth");
 		book3.setYearReleased("1978");
 		book3.setGenre(genre2);
 		book3.setUrl("http://feministsforchoice.com/wp-content/uploads/2012/06/Manga.png");
+		book3.setDescription("Twelve years before the start of the series," +
+				" a powerful creature known as the Nine-tailed Demon Fox attacked" +
+				" the ninja village Konohagakure, decimating many people. In response," +
+				" the leader of Konohagakure's ninja military – the Fourth Hokage – " +
+				"sacrificed his life to seal the demon inside his newly born child Naruto Uzumaki." +
+				" Konohagakure, however, regarded Naruto as if he were the demon fox itself" +
+				" and mistreated him throughout most of his childhood.The plot tells the" +
+				" story of Naruto Uzumaki, now a adolescent ninja who constantly searches for" +
+				" recognition and dreams to become the Hokage, the ninja in his village who is" +
+				" acknowledged as the leader and the strongest of all.");
 		
 		Book book4 = new Book();
 		book4.setTitle("APPLES AND ORANGES");
@@ -82,6 +116,16 @@ public class Datasource {
 		book4.setYearReleased("2012");
 		book4.setGenre(genre3);
 		book4.setUrl("http://gamesworldbodmin.co.uk/images/Manga_Academy.jpg");
+		book4.setDescription("Twelve years before the start of the series," +
+				" a powerful creature known as the Nine-tailed Demon Fox attacked" +
+				" the ninja village Konohagakure, decimating many people. In response," +
+				" the leader of Konohagakure's ninja military – the Fourth Hokage – " +
+				"sacrificed his life to seal the demon inside his newly born child Naruto Uzumaki." +
+				" Konohagakure, however, regarded Naruto as if he were the demon fox itself" +
+				" and mistreated him throughout most of his childhood.The plot tells the" +
+				" story of Naruto Uzumaki, now a adolescent ninja who constantly searches for" +
+				" recognition and dreams to become the Hokage, the ninja in his village who is" +
+				" acknowledged as the leader and the strongest of all.");
 		
 		bookList.add(book1);
 		bookList.add(book2);

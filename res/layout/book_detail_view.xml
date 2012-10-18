@@ -3,74 +3,53 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"	    
 	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:orientation="vertical" >
+	    android:layout_height="wrap_content" >
 	    
 	    <ImageView
 		    android:id="@+id/thumbnailLarge"
 	  	  	android:contentDescription="@string/thumbnail_description"
-	      	android:layout_width="fill_parent"        	
-	      	android:layout_height="200dp" 
+	      	android:layout_width="wrap_content"        	
+	      	android:layout_height="200dp" 	      	
 	      	android:adjustViewBounds="true" />
 	    
-	    <LinearLayout
+	    <RelativeLayout
+	        android:id="@+id/informationLayout"
 	        android:layout_width="fill_parent"
-	        android:layout_height="fill_parent"
-	        android:orientation="vertical" >
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/thumbnailLarge"
+	        android:padding="10dp"
+	        android:layout_gravity="center" >
 		    <TextView
-		        android:id="@+id/titleDetail"
+		        android:id="@+id/titleDetail"		        
 		       	android:layout_width="wrap_content"
-		       	android:textSize="25dp"
+		       	android:textSize="15dp"
 		       	android:textStyle="bold"
 		       	android:typeface="sans"
-		       	android:layout_height="wrap_content"
-		       	android:layout_gravity="center"
-		       />
+		       	android:layout_height="wrap_content"		       	
+		       	android:layout_alignParentTop="true" />
 		    
 		    <TextView
 		        android:id="@+id/authorDetail"
 		        android:layout_width="wrap_content"
 		       	android:layout_height="wrap_content"
 		       	android:textSize="20dp"
+				
+				android:layout_below="@id/titleDetail"
+		       	android:typeface="sans" />
+    		    		        		
+		</RelativeLayout>
 	
-		       	android:typeface="sans"
-		       	android:layout_gravity="center"
-		        />
-		    
-		    <TextView
-		        android:id="@+id/yearDetail"
+	    <RelativeLayout
+	        android:layout_height="wrap_content"
+	        android:layout_width="fill_parent"
+	        android:layout_below="@id/thumbnailLarge" >
+	        <TextView
+		        android:id="@+id/description"
 		        android:layout_width="wrap_content"
-		       	android:layout_height="wrap_content"
-		       	android:typeface="sans"
-		       	android:textSize="15dp"
-	
-		       	android:layout_gravity="center"
-		        />
-		    
-		    <Button
-		        android:id="@+id/openBtn"
 		        android:layout_height="wrap_content"
-		     	android:layout_width="fill_parent"
-		     	android:text="Open"
-		     	android:onClick="openPressed" />
-		     	
-		    <Button
-		        android:id="@+id/shareBtn"
-		        android:layout_height="wrap_content"
-		     	android:layout_width="fill_parent"
-		     	android:text="Share"
-		     	android:onClick="sharePressed" />
-		     	
-		    <Button
-		        android:id="@+id/bookmarkBtn"
-		        android:layout_height="wrap_content"
-		     	android:layout_width="fill_parent"
-		     	android:text="Add to Bookshelf"
-		     	android:onClick="bookmarkPressed" />
-	
-		</LinearLayout>
-		
-	</LinearLayout>
+		         />
+	     </RelativeLayout>	    	
+	</RelativeLayout>
 </ScrollView>

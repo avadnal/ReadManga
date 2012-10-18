@@ -49,19 +49,28 @@ public class BookDetail extends Activity {
         
         
         holder.mThumbnailLarge = (ImageView)findViewById(R.id.thumbnailLarge);
+        
+              
         ImageLoader.getInstance().displayImage(mDataSource.getUrlAtIndex(mPosition), holder.mThumbnailLarge);
                 
         holder.mTitle = (TextView)findViewById(R.id.titleDetail);
-        holder.mAuthor = (TextView)findViewById(R.id.authorDetail);
-        holder.mYear = (TextView)findViewById(R.id.yearDetail);
+        holder.mAuthor = (TextView)findViewById(R.id.authorDetail);   
+        holder.mDescription = (TextView)findViewById(R.id.description);
         
-        holder.mTitle.setText(mDataSource.getTitleAtIndex(mPosition));
-        holder.mAuthor.setText(mDataSource.getAuthorAtIndex(mPosition));       
-        holder.mYear.setText(mDataSource.getYearAtIndex(mPosition));
+        // Don't like displaying a year as a new line
+        String titleAndYearText = String.format("%s (%s)",
+        		mDataSource.getTitleAtIndex(mPosition),
+        		mDataSource.getYearAtIndex(mPosition));
+        
+        holder.mTitle.setText(titleAndYearText);
+        holder.mAuthor.setText(mDataSource.getAuthorAtIndex(mPosition));      
+        holder.mDescription.setText(mDataSource.getDescriptionAtIndex(mPosition));
+        
 	}
 	
 	public static class ViewHolder {
-		TextView mTitle, mAuthor, mYear;
+		View mThumbnailParentView;
+		TextView mTitle, mAuthor, mDescription;
 		ImageView mThumbnailLarge;
     }
 	

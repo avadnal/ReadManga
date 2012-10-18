@@ -69,7 +69,7 @@ public class UserBookshelf extends ListActivity {
 		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
 	        .defaultDisplayImageOptions(defaultOptions)
 	        .build();
-		ImageLoader.getInstance().init(config); // Do it on Application start
+		ImageLoader.getInstance().init(config);
 
         
     }
